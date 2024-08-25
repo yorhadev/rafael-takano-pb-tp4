@@ -1,0 +1,16 @@
+.home_container {
+  min-height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home_signin {
+  max-width: 350px;
+  width: 100%;
+}
+
+.home_signin_options {
+  text-align: right;
+  margin-top: 1rem;
+}

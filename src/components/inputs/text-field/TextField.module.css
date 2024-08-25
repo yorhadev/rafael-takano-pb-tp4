@@ -1,0 +1,14 @@
+.text_field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.text_field span {
+  color: #171717;
+  font-weight: bold;
+}
+
+.text_field input {
+  padding: 0.25rem;
+}

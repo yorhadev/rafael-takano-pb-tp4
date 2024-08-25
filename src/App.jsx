@@ -1,17 +1,27 @@
+import { Route, Routes } from "react-router-dom";
 import { useState } from "react";
+import { AppContext } from "./contexts";
+import { AppLayout } from "./layouts";
+import { Dashboard, Home, SignIn } from "./pages";
 
 function App() {
-  const [count, setCount] = useState(0);
-
+  AppContext;
+  const [appContext, setAppContext] = useState({
+    alert: { type: "", message: "" },
+    loading: false,
+  });
   return (
-    <div>
-      <button onClick={() => setCount((count) => count + 1)}>
-        count is {count}
-      </button>
-      <p>
-        Edit <code>src/App.jsx</code> and save to test HMR
-      </p>
-    </div>
+    <AppContext.Provider value={[appContext, setAppContext]}>
+      <div id="_app">
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route element={<AppLayout />}>
+            <Route path="/signin" element={<SignIn />}></Route>
+            <Route path="/dashboard" element={<Dashboard />}></Route>
+          </Route>
+        </Routes>
+      </div>
+    </AppContext.Provider>
   );
 }
 
